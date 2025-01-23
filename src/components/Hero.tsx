@@ -1,6 +1,14 @@
 import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="pt-16 bg-gradient-to-br from-primary-light to-primary">
       <div className="container mx-auto px-4 py-20">
@@ -15,6 +23,7 @@ export const Hero = () => {
             <div className="flex gap-4 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
               <a
                 href="#contact"
+                onClick={scrollToContact}
                 className="bg-white text-primary px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors"
               >
                 Зв'язатися з нами
