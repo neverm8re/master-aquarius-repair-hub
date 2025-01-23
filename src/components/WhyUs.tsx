@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, Wrench, Trophy } from "lucide-react";
+import { CheckCircle, Clock, Tool, Trophy } from "lucide-react";
 
 export const WhyUs = () => {
   const benefits = [
@@ -8,7 +8,7 @@ export const WhyUs = () => {
       description: "Більше 10 років досвіду в ремонті та обслуговуванні насосного обладнання",
     },
     {
-      icon: <Wrench className="w-12 h-12 text-primary" />,
+      icon: <Tool className="w-12 h-12 text-primary" />,
       title: "Якісні запчастини",
       description: "Використовуємо тільки оригінальні запчастини та професійне обладнання",
     },
