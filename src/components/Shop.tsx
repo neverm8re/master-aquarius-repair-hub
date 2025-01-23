@@ -1,14 +1,14 @@
-import { Pump, Tool, Cog, Grain } from "lucide-react";
+import { Droplet, Wrench, Cog, Package } from "lucide-react";
 
 export const Shop = () => {
   const categories = [
     {
-      icon: <Pump className="w-12 h-12 mb-4" />,
+      icon: <Droplet className="w-12 h-12 mb-4" />,
       title: "Насоси",
       items: ["Водяні насоси", "Свердловинні насоси", "Циркуляційні насоси"],
     },
     {
-      icon: <Tool className="w-12 h-12 mb-4" />,
+      icon: <Wrench className="w-12 h-12 mb-4" />,
       title: "Запчастини",
       items: ["Підшипники", "Сальники", "Робочі колеса"],
     },
@@ -18,7 +18,7 @@ export const Shop = () => {
       items: ["Реле тиску", "Гідроакумулятори", "Блоки управління"],
     },
     {
-      icon: <Grain className="w-12 h-12 mb-4" />,
+      icon: <Package className="w-12 h-12 mb-4" />,
       title: "Крупорушки",
       items: ["Побутові крупорушки", "Промислові крупорушки", "Запчастини"],
     },
