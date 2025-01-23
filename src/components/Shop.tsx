@@ -1,4 +1,5 @@
-import { Droplet, Wrench, Cog, Package } from "lucide-react";
+import { Droplet, Wrench, Cog, Package, ExternalLink } from "lucide-react";
+import { Button } from "./ui/button";
 
 export const Shop = () => {
   const categories = [
@@ -50,6 +51,19 @@ export const Shop = () => {
               </ul>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <Button
+            variant="default"
+            size="lg"
+            className="gap-2"
+            asChild
+          >
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Перейти до магазину <ExternalLink className="w-4 h-4" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
