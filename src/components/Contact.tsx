@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, Mail, Tiktok } from "lucide-react";
+import { Phone, MapPin, Clock, Mail } from "lucide-react";
 
 export const Contact = () => {
   const contactInfo = [
@@ -6,11 +6,15 @@ export const Contact = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Телефон",
       details: "+380 XX XXX XX XX",
+      isLink: true,
+      href: "tel:+380XXXXXXXX",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Адреса",
       details: "вул. Примірна, 123, м. Київ",
+      isLink: true,
+      href: "https://www.google.com/maps/search/?api=1&query=вул.+Примірна+123+Київ",
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -21,12 +25,8 @@ export const Contact = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       details: "info@vodoliy.com",
-    },
-    {
-      icon: <Tiktok className="w-6 h-6" />,
-      title: "TikTok",
-      details: "#",
       isLink: true,
+      href: "mailto:info@vodoliy.com",
     },
   ];
 
@@ -36,7 +36,7 @@ export const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Контакти
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {contactInfo.map((info, index) => (
             <div
               key={index}
@@ -47,12 +47,12 @@ export const Contact = () => {
               <h3 className="text-xl font-semibold mb-2">{info.title}</h3>
               {info.isLink ? (
                 <a
-                  href={info.details}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="opacity-90 hover:opacity-100 underline"
+                  href={info.href}
+                  target={info.title === "Адреса" ? "_blank" : undefined}
+                  rel={info.title === "Адреса" ? "noopener noreferrer" : undefined}
+                  className="opacity-90 hover:opacity-100 underline cursor-pointer"
                 >
-                  Перейти до TikTok
+                  {info.details}
                 </a>
               ) : (
                 <p className="opacity-90 whitespace-pre-line">{info.details}</p>
