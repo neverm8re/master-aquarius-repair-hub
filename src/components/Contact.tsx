@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, Mail, BrandTiktok } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Tiktok } from "lucide-react";
 
 export const Contact = () => {
   const contactInfo = [
@@ -23,7 +23,7 @@ export const Contact = () => {
       details: "info@vodoliy.com",
     },
     {
-      icon: <BrandTiktok className="w-6 h-6" />,
+      icon: <Tiktok className="w-6 h-6" />,
       title: "TikTok",
       details: "#",
       isLink: true,
