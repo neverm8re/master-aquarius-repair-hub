@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Tiktok } from "lucide-react";
 
 export const Contact = () => {
   const contactInfo = [
@@ -28,6 +28,13 @@ export const Contact = () => {
       isLink: true,
       href: "mailto:info@vodoliy.com",
     },
+    {
+      icon: <Tiktok className="w-6 h-6" />,
+      title: "TikTok",
+      details: "Наш TikTok",
+      isLink: true,
+      href: "https://www.tiktok.com/@username",
+    },
   ];
 
   return (
@@ -36,7 +43,7 @@ export const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Контакти
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {contactInfo.map((info, index) => (
             <div
               key={index}
@@ -48,8 +55,8 @@ export const Contact = () => {
               {info.isLink ? (
                 <a
                   href={info.href}
-                  target={info.title === "Адреса" ? "_blank" : undefined}
-                  rel={info.title === "Адреса" ? "noopener noreferrer" : undefined}
+                  target={info.title === "Адреса" || info.title === "TikTok" ? "_blank" : undefined}
+                  rel={info.title === "Адреса" || info.title === "TikTok" ? "noopener noreferrer" : undefined}
                   className="opacity-90 hover:opacity-100 underline cursor-pointer"
                 >
                   {info.details}
