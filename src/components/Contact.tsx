@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, BrandTiktok } from "lucide-react";
 
 export const Contact = () => {
   const contactInfo = [
@@ -22,6 +22,12 @@ export const Contact = () => {
       title: "Email",
       details: "info@vodoliy.com",
     },
+    {
+      icon: <BrandTiktok className="w-6 h-6" />,
+      title: "TikTok",
+      details: "#",
+      isLink: true,
+    },
   ];
 
   return (
@@ -30,7 +36,7 @@ export const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Контакти
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {contactInfo.map((info, index) => (
             <div
               key={index}
@@ -39,7 +45,18 @@ export const Contact = () => {
             >
               <div className="bg-white/10 p-4 rounded-full mb-4">{info.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{info.title}</h3>
-              <p className="opacity-90 whitespace-pre-line">{info.details}</p>
+              {info.isLink ? (
+                <a
+                  href={info.details}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-90 hover:opacity-100 underline"
+                >
+                  Перейти до TikTok
+                </a>
+              ) : (
+                <p className="opacity-90 whitespace-pre-line">{info.details}</p>
+              )}
             </div>
           ))}
         </div>
